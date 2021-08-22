@@ -9,7 +9,7 @@
 <p>Learning Canvas</p>
 <canvas id = "canvas_1" , width="1000" , height="1000" ></canvas>
 <script>
-    let inp = prompt("Enter number of sides of Polygon");
+    let inp = prompt("Enter number of sides of Polygon (up to 15)");
 
 	let canvas = document.getElementById('canvas_1');
 	let cx = canvas.getContext("2d");
@@ -45,14 +45,11 @@
     cx.moveTo(300 , 300);
     cx.lineTo(Math.abs(op(ses , -300 , 300).x) , Math.abs(op(ses , -300 , 300).y));
     cx.moveTo(300 , 300); 
-    // //cx.stroke();
 
     for(let i = 2; i <= n;i++) {
 
         let prev_line = new pt( op(ses, suru.x , suru.y).x , op(ses , suru.x , suru.y).y );
-     //   console.log(prev_line.x + " " + prev_line.y);
         let cur_line_suru = rot(prev_line , ang);
-       // console.log(cur_line_suru.x + " " + cur_line_suru.y);
         cur_line_suru.x += suru.x;
         cur_line_suru.y += suru.y;
            
